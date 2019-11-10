@@ -1,0 +1,15 @@
+.login-box {
+    height: 45vh;
+    width: 80vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .20);
+    border-radius: 20px;
+}
+
+.loginText {
+    margin-bottom: -60px;
+}
+
+.loginButton {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
