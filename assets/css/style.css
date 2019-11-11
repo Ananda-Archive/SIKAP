@@ -13,3 +13,20 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
+
+.regis-box {
+    height: 55vh;
+    width: 80vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .20);
+    border-radius: 20px;
+}
+
+.error-msg-regis {
+    color: red;
+    display: inline-block;
+}
+
+.error-msg-regis p {
+    margin-bottom: 0 !important;
+    text-align: right;
+}
