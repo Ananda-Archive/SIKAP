@@ -33,7 +33,7 @@ class Login extends CI_Controller {
                         redirect("koordosbing/index");
                     } else {
                         if($level == 3) { //TU
-                            redirect("TU/index");
+                            redirect("tu");
                         }
                     }
                 }
