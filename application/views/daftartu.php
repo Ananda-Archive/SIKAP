@@ -40,6 +40,11 @@
                                     ?>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="back-link col-12 d-flex justify-content-center align-items-center">
+                                    <p><a href=" <?php echo base_url('login') ?>  ">Back</a></p>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
