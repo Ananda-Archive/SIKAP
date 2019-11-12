@@ -1,11 +1,11 @@
-        <div class="container-fluid">
+<div class="container-fluid">
             <div class="row d-flex justify-content-center my-5">
                 <div class="col-11 list-box px-5">
                     <div class="list-box-header mt-5 mb-2">
-                        DOSEN PEMBIMBING
+                        TEMA KP
                         <div class="addDosenPembimbing">
-                            <a href="addDosbing">
-                                <button type="button" class="btn btn-success" >Tambah Dosen Pembimbing</button>
+                            <a href="addKp">
+                                <button type="button" class="btn btn-success" >Tambah Tema KP</button>
                             </a>
                         </div>
                     </div>
@@ -13,33 +13,22 @@
                     <?php if ($this->session->flashdata('regis_success')) { ?>
                                             <div class="alert alert-success m-3"> <?= $this->session->flashdata('regis_success') ?> </div>
                     <?php } ?>
-                    <table align="center" class="tablelist mb-5">
+                    <table align="center" class="tablelistmhs mb-5">
                         <thead>
                             <tr>
-                                <th>NIP</th>
-                                <th>Nama</th>
-                                <th>Status</th>
+                                <th>id</th>
+                                <th>Tema KP</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                foreach($data->result_array() as $i):
+                                foreach($datalistkp->result_array() as $i):
                                     $id = $i['id'];
-                                    $nama = $i['nama'];
-                                    $level = $i['level'];
+                                    $judul = $i['judul'];
                             ?>
                                 <tr>
                                     <td><?php echo $id; ?></td>
-                                    <td><?php echo $nama; ?></td>
-                                    <td>
-                                        <?php
-                                            if($level == 1) {
-                                                echo "Dosen Pembimbing";
-                                            } else {
-                                                echo "Koor Dosen Pembimbing";
-                                            }
-                                        ?>
-                                    </td>
+                                    <td><?php echo $judul; ?></td>
                                 </tr>
                             <?php endforeach;?>
                         </tbody>

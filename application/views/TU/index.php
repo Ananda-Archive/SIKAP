@@ -17,7 +17,7 @@
                             </a>
                         </div>
                         <div class="col-12 d-flex justify-content-center align-items-center my-4">
-                            <a href="">
+                            <a href="<?php echo base_url('mhs') ?>">
                                 <div class="mhs-box rounded p-3 d-flex align-items-center justify-content-center">
                                     <div class="row vw-100">
                                         <div class="col-4">
@@ -31,7 +31,7 @@
                             </a>
                         </div>
                         <div class="col-12 d-flex justify-content-center align-items-center my-4">
-                            <a href="">
+                            <a href="<?php echo base_url('kerjapraktek') ?>">
                                 <div class="kp-box rounded p-3 d-flex align-items-center justify-content-center">
                                     <div class="row vw-100">
                                         <div class="col-4">

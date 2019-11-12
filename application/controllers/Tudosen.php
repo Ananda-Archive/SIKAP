@@ -32,13 +32,13 @@ class Tudosen extends CI_Controller {
             $where = array(
                 'id' => $id    
                 );
-            $check = $this->m_user->check("dosen",$where)->num_rows();
+            $check = $this->m_dosen->check("dosen",$where)->num_rows();
             if($check > 0) {
                 $this->session->set_flashdata('add_nik_add','NIK Sudah Terdaftar');
                 redirect('addDosbing');
             } else {
                 $this->session->set_flashdata('regis_success','Registrasi berhasil');
-                $user = $this->m_user;
+                $user = $this->m_dosen;
                 $user->tu_add_dosbing();
                 redirect('dosbing');
             }
