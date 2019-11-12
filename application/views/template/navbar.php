@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-light d-flex justify-content-between">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="<?php echo base_url('tu'); ?>">
         <div class="d-flex align-items-center">
             <img src="<?php echo base_url('assets/img/logo.png') ?>" width="150" class="d-inline-block align-top" alt="">
             <span class="ml-3 text-dark">SIKAP - Sistem Informasi Kerja Praktek</span>

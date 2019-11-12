@@ -8,7 +8,7 @@ class Regis extends CI_Controller {
     }
 
     function daftartu() {
-        $this->load->library('form_validation');
+        // $this->load->library('form_validation');
         $this->form_validation->set_rules('idregis', 'NIK', 'required|max_length[14]|min_length[3]');
         $this->form_validation->set_rules('namaregis', 'Nama Lengkap', 'required|max_length[40]|min_length[3]');
         $this->form_validation->set_rules('passregis', 'password', 'required|max_length[50]|min_length[6]');
@@ -31,14 +31,14 @@ class Regis extends CI_Controller {
                     $this->session->set_flashdata('regis_success','Registrasi berhasil');
                     $user = $this->m_user;
                     $user->regis();
-                    redirect('regis');
+                    redirect('register');
                 } else {
                     $this->session->set_flashdata('regis_nik_regis','NIK Sudah Terdaftar');
-                    redirect('regis');
+                    redirect('register');
                 }
             } else {
                 $this->session->set_flashdata('regis_nik_not_found','NIK tidak diketahui');
-                redirect('regis');
+                redirect('register');
             }
         }
     }
