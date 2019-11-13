@@ -55,7 +55,11 @@ class Pages extends CI_Controller {
     }
 
     public function ReadDosbing() {
-
+        $id = $this->session->userdata('id');
+        $x['datamhsdosbing'] = $this->m_mhs->tu_show_mhsdosbing($id);
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('Dosbing/profiledosen',$x);
     }
 
     public function KoorDosbingIndex() {

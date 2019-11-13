@@ -15,10 +15,12 @@ class Login extends CI_Controller {
         if($validate->num_rows() > 0) {
             $data  = $validate->row_array();
             $id = $data['id'];
+            $nama = $data['nama'];
             $password = $data['password'];
             $level = $data['level'];
             $data_session = array(
                 'id'  => $id,
+                'nama' => $nama,
                 'level'     => $level,
                 'logged_in' => TRUE
             );
@@ -27,7 +29,7 @@ class Login extends CI_Controller {
                 redirect("mahasiswa/index");
             } else {
                 if($level == 1) { //Dosbing
-                    redirect("dosbing/index");
+                    redirect("datadosbing");
                 } else {
                     if($level == 2) { //Koor Dosbing
                         redirect("koordosbing/index");

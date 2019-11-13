@@ -12,8 +12,8 @@ $route['tumhs'] = 'tumhs';
 $route['tukp'] = 'tukp';
 
 //Dosbing
-$route['dosbing'] = 'cdosbing';
-$route['koor'] = 'ckoor';
+$route['cdosbing'] = 'cdosbing';
+$route['ckoor'] = 'ckoor';
 
 //Mahasiswa
 

@@ -54,6 +54,11 @@ class M_mhs extends CI_Model {
         $this->db->insert($this->table_mhs, $this);
     }
 
+    public function tu_show_mhsdosbing($id) {
+        $query = $this->db->query("SELECT * FROM mahasiswa WHERE id_dosbing = '". $id ."'");
+        return $query;
+    }
+
 }
 
 ?>
