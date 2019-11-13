@@ -53,6 +53,19 @@ class Pages extends CI_Controller {
         $this->load->view('template/navbar.php');
         $this->load->view('TU/CRUD/add_kp');
     }
+
+    public function ReadDosbing() {
+
+    }
+
+    public function KoorDosbingIndex() {
+
+    }
+
+    public function UDosbing() {
+        
+    }
+
 }
 
 ?>

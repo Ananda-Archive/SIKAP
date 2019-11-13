@@ -22,7 +22,7 @@ class TUmhs extends CI_Controller {
         $this->form_validation->set_rules('namamhs','Nama','required|min_length[3]|max_length[40]');
         $this->form_validation->set_rules('passmhs','Password','required|min_length[3]|max_length[30]');
         $this->form_validation->set_rules('ipkmhs','IPK','required|decimal|min_length[4]|max_length[4]');
-        $this->form_validation->set_rules('sksmhs','SKS','required|greater_than_equal_to[80]');
+        $this->form_validation->set_rules('sksmhs','SKS','required|greater_than_equal_to[65]');
         $this->form_validation->set_rules('perusahaanmhs','Nama Perusahaan','required|min_length[3]|max_length[50]');
 
         $this->form_validation->set_message('required','Wajib Diisi');
