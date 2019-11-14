@@ -2,14 +2,14 @@
             <div class="row d-flex justify-content-center my-5">
                 <div class="col-11 list-box px-5">
                     <div class="list-box-header mt-5 mb-2 text-center">
-                        DOSEN PEMBIMBING
+                        PROFIL DOSEN PEMBIMBING
                     </div>
                     <hr>
                     <div class="dosen-profile">
                         <h3>Nama&ensp;: <?php echo $this->session->userdata('nama'); ?></h3>
                         <h3>NIP&ensp;&ensp;&ensp;: <?php echo $this->session->userdata('id'); ?></h3>
                         <h3>Peran&ensp;: <?php 
-                            if($this->session->userdata('id') == 2) {
+                            if($this->session->userdata('level') == 2) {
                                 echo "Koor";
                             } else {
                                 echo "Dosen Pembimbing";

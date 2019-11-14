@@ -26,7 +26,7 @@ class M_mhs extends CI_Model {
             SELECT mhs.id,mhs.nama,kp.judul,dosen.nama as Dosen_Pembimbing,mhs.nilai
             FROM mahasiswa AS mhs
             LEFT JOIN kp ON kp.id = mhs.id_kp
-            INNER JOIN dosen ON dosen.id = mhs.id_dosbing
+            LEFT JOIN dosen ON dosen.id = mhs.id_dosbing
         ");
         return $query;
     }
@@ -59,6 +59,53 @@ class M_mhs extends CI_Model {
         return $query;
     }
 
+    public function get_mhs_dosbing() {
+        $query = $this->db->query("
+            SELECT mhs.id,mhs.nama,kp.judul,dosen.nama as Dosen_Pembimbing,mhs.nilai
+            FROM mahasiswa AS mhs
+            LEFT JOIN kp ON kp.id = mhs.id_kp
+            INNER JOIN dosen ON dosen.id = mhs.id_dosbing
+        ");
+        return $query;
+    }
+
+    public function get_mhs_none() {
+        $query = $this->db->query("SELECT id,id_dosbing,nama FROM mahasiswa WHERE id_dosbing IS NULL");
+        return $query;
+    }
+
+    public function add_mhs_dosbing($where,$data,$table) {
+        $this->db->where($where);
+		$this->db->update($table,$data);
+    }
+
+    public function check_delete($id) {
+        $query = $this->db->query("SELECT * from mahasiswa WHERE id_dosbing = '". $id ."'");
+        return $query;
+    }
+
+    public function tu_update_mhs($id,$data) {
+        $this->db->where('id',$id);
+        $this->db->update($this->table_mhs,$data);
+    }
+
+    public function mhs_delete($where,$table) {
+        $this->db->where($where);
+	    $this->db->delete($table);
+    }
+
+    public function mhs_null($where,$table) {
+        $this->db->where($where);
+        $this->db->set('id_dosbing', NULL);
+	    $this->db->update($table);
+    }
+
+    function store_data($data){
+		$insert_data['file_kp'] = $data['berkas'];
+        $this->db->where('id', $this->session->userdata('id'));
+		$query = $this->db->update('mahasiswa', $insert_data);
+	}
+    
 }
 
 ?>

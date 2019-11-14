@@ -26,13 +26,13 @@ class Login extends CI_Controller {
             );
             $this->session->set_userdata($data_session);
             if($level == 0) { //Mahasiswa
-                redirect("mahasiswa/index");
+                redirect("datamhsnone");
             } else {
                 if($level == 1) { //Dosbing
                     redirect("datadosbing");
                 } else {
                     if($level == 2) { //Koor Dosbing
-                        redirect("koordosbing/index");
+                        redirect("indexkoordosbing");
                     } else {
                         if($level == 3) { //TU
                             redirect("tu");

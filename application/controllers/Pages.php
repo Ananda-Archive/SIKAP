@@ -26,6 +26,12 @@ class Pages extends CI_Controller {
         $this->load->view('TU/CRUD/add_dosbing');
     }
 
+    public function TUDosen_update() {
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('TU/CRUD/updateDosbing');
+    }
+
     public function TUMhs() {
         $x['data'] = $this->m_mhs->tu_show_mhs();
         $this->load->view('template/head.php');
@@ -39,6 +45,13 @@ class Pages extends CI_Controller {
         $this->load->view('template/head.php');
         $this->load->view('template/navbar.php',$x);
         $this->load->view('TU/CRUD/add_mhs',$z);
+    }
+
+    public function TUMhs_update() {
+        $z['datakp'] = $this->m_mhs->get_tema_kp();
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('TU/CRUD/updateMhs',$z);
     }
 
     public function TUkp() {
@@ -63,11 +76,42 @@ class Pages extends CI_Controller {
     }
 
     public function KoorDosbingIndex() {
-
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('dosbing/index.php');
     }
 
     public function UDosbing() {
-        
+        $x['data'] = $this->m_mhs->get_mhs_dosbing();
+        $y['datamhsnone'] = $this->m_mhs->get_mhs_none();
+        $z['datadosbingless'] = $this->m_dosen->get_dosen_less();
+        $this->load->view('template/head.php',$y);
+        $this->load->view('template/navbar.php',$z);
+        $this->load->view('Dosbing/listmhsdosbing',$x);
+    }
+
+    public function ReadMhs() {
+        $id = $this->session->userdata('id');
+        $x['datadirimhs'] = $this->m_mhs->check("mahasiswa",array('id =' => $id));
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('Mahasiswa/index',$x);
+    }
+
+    // public function UploadFileMhs() {
+    //     $id = $this->session->userdata('id');
+    //     $x['datadirimhs'] = $this->m_mhs->check("mahasiswa",array('id =' => $id));
+    //     $this->load->view('template/head.php');
+    //     $this->load->view('template/navbar.php');
+    //     $this->load->view('Mahasiswa/uploadfile');
+    // }
+
+    public function NilaiKPMhs() {
+        $id = $this->session->userdata('id');
+        $x['datadirimhs'] = $this->m_mhs->check("mahasiswa",array('id =' => $id));
+        $this->load->view('template/head.php');
+        $this->load->view('template/navbar.php');
+        $this->load->view('Mahasiswa/nilaikp');
     }
 
 }

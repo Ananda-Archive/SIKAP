@@ -8,11 +8,25 @@ hr {
     margin-bottom: 40px;
 }
 
+body {
+    background-color: #E4DFCF;
+}
+
+.list-box {
+    background-color: #faf8f0;
+}
+
+.navbar-my {
+    background-color: #065f9c;
+    color: white;
+}
+
 .login-box {
     height: 45vh;
     width: 80vh;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .20);
     border-radius: 20px;
+    background-color: #faf8f0;
 }
 
 .loginText {
@@ -29,6 +43,7 @@ hr {
     width: 80vh;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .20);
     border-radius: 20px;
+    background-color: #faf8f0;
 }
 
 .error-msg-regis {
@@ -50,6 +65,7 @@ hr {
 }
 
 .dosen-box, .mhs-box, .kp-box {
+    background-color: #faf8f0;
     height: 20vh;
     width: 75vh;
     transition: 0.18s;
@@ -92,6 +108,7 @@ hr {
 .tablelist thead tr th, .tablelistmhs thead tr th {
     text-align: center;
     font-size: 20px;
+    background-color: #028FCF;
 }
 
 .tablelist thead tr th:first-child {
@@ -102,6 +119,10 @@ hr {
     width: 15%;
 }
 
+.tablelist thead tr th:nth-child(4) {
+    width: 13%;
+}
+
 .tablelist thead tr th, .tablelist tbody tr td, .tablelistmhs thead tr th, .tablelistmhs tbody tr td {
     padding: 13px;
     border: 1px solid black;
@@ -110,6 +131,10 @@ hr {
 
 .tablelist tbody tr:nth-child(odd), .tablelistmhs tbody tr:nth-child(odd) {
     background-color: #F2F2F2;
+}
+
+.tablelist tbody tr:nth-child(even), .tablelistmhs tbody tr:nth-child(even) {
+    background-color: #fff;
 }
 
 .addDosenPembimbing {
@@ -125,7 +150,24 @@ hr {
     font-size: 1.3em;
 }
 
+.alert-null-dosen {
+    font-size: 13px;
+    color: red;
+    display: inline-block !important;
+}
 
+.bio-table {
+    width: 70%;
+    margin-bottom: 70px;
+    font-size: 30px;
+}
+
+.bio-table tr td:first-child{
+    width: 40%;
+}
+.bio-table tr td:nth-child(2){
+    width: 10%;
+}
 
 @media only screen and (max-height: 1000px) {
 

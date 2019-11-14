@@ -37,18 +37,7 @@
                                         <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="form-group row">
-                                <label>Dosen Pembimbing</label>
-                                <select class="form-control" id="dosbingmhs" name="dosbingmhs">
-                                    <?php
-                                        foreach($datadosen->result_array() as $j):
-                                            $id = $j['id'];
-                                            $nama = $j['nama'];
-                                    ?>
-                                    <option value="<?php echo $id ?>"><?php echo $nama ?></option>
-                                        <?php endforeach; ?>
-                                </select>
-                            </div>
+                            
                             <div class="form-group row">
                                 <label>Nama Perusahaan <span class="error-msg-regis"><?php echo form_error('perusahaanmhs'); ?></span></label>
                                 <input type="text" class="form-control" id="perusahaanmhs" name="perusahaanmhs" placeholder="Enter Nama Perusahaan" required>

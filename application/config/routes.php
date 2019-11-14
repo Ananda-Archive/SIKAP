@@ -16,7 +16,7 @@ $route['cdosbing'] = 'cdosbing';
 $route['ckoor'] = 'ckoor';
 
 //Mahasiswa
-
+$route['cmhs'] = 'cmhs';
 
 // ============================================================
 
@@ -28,6 +28,8 @@ $route['register'] = 'pages/register';
 $route['tu'] = 'pages/TUIndex';
 $route['dosbing'] = 'pages/TUDosen';
 $route['addDosbing'] = 'pages/TUDosen_add';
+$route['updateMhs'] = 'pages/TUMhs_update';
+$route['updateDosbing'] = 'pages/TUDosen_update';
 $route['mhs'] = 'pages/TUMhs';
 $route['addMhs'] = 'pages/TUMhs_add';
 $route['kerjapraktek'] = 'pages/TUkp';
@@ -39,6 +41,10 @@ $route['indexkoordosbing'] = 'pages/KoorDosbingIndex';
 $route['koordosbing'] = 'pages/UDosbing';
 
 //Mahasiswa
+$route['datamhsnone'] = 'pages/ReadMhs';
+// $route['uploadfilemhs'] = 'pages/UploadFileMhs';
+$route['nilaikpmhs'] = 'pages/NilaiKPMhs';
+$route['datamhs'] = 'pages.ReadMhsDone';
 
 
 // =======================================================

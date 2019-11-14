@@ -12,13 +12,26 @@
                     <hr>
                     <?php if ($this->session->flashdata('regis_success')) { ?>
                                             <div class="alert alert-success m-3"> <?= $this->session->flashdata('regis_success') ?> </div>
-                    <?php } ?>
+                    <?php }else {
+                        if ($this->session->flashdata('update_success')) { ?>
+                        <div class="alert alert-success m-3"> <?= $this->session->flashdata('update_success') ?> </div>
+                    <?php } else {
+                            if ($this->session->flashdata('update_failed')) { ?>
+                            <div class="alert alert-danger m-3"> <?= $this->session->flashdata('update_failed') ?> </div>
+                    <?php }}} ?>
+                    <?php if ($this->session->flashdata('delete_failed')) { ?>
+                        <div class="alert alert-danger m-3"> <?= $this->session->flashdata('delete_failed') ?> </div>
+                    <?php }?>
+                    <?php if ($this->session->flashdata('delete_success')) { ?>
+                        <div class="alert alert-success m-3"> <?= $this->session->flashdata('delete_success') ?> </div>
+                    <?php }?>
                     <table align="center" class="tablelist mb-5">
                         <thead>
                             <tr>
                                 <th>NIP</th>
                                 <th>Nama</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,6 +53,17 @@
                                             }
                                         ?>
                                     </td>
+                                    <td class="text-center">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a href="updateDosbing?id=<?php echo $id ?>"><button type="button" class="btn btn-dark">Edit</button></a>
+                                        </div>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <form action="tudosen/deleteDosen" method="POST">
+                                                <input type="hidden" id="idDelete" name="iddelete" value="<?php echo $id ?>">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endforeach;?>
                         </tbody>
@@ -48,5 +72,4 @@
             </div>
         </div>
     </body>
-    <script>
 </html>

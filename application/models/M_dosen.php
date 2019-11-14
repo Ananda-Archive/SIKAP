@@ -28,6 +28,27 @@ class M_dosen extends CI_Model {
         $this->db->insert($this->table_dosen, $this);
     }
 
+    public function tu_update_dosbing($id,$data) {
+        $this->db->where('id',$id);
+        $this->db->update($this->table_dosen,$data);
+    }
+
+    public function get_dosen_less() {
+        $query = $this->db->query("
+            SELECT dosen.id,dosen.nama, COUNT(*)
+            FROM dosen
+            JOIN mahasiswa ON mahasiswa.id_dosbing = dosen.id
+            GROUP BY 1
+            HAVING COUNT(*) < 8
+        ");
+        return $query;
+    }
+
+    public function dosen_delete($where,$table) {
+        $this->db->where($where);
+	    $this->db->delete($table);
+    }
+
 }
 
 ?>
